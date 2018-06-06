@@ -83,5 +83,5 @@ __Github repository with links to configuration for each device__
 
 All files on master branch  
 
-_Pull request includes annotated summary of our configuration_
+_Pull request includes __ANNOTATED SUMMARY__ of our configuration_  
 https://github.com/bonngyn/info341/pull/1
