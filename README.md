@@ -9,27 +9,28 @@ __Description of network:__
 Our network has one ISP and one edge network. Both of them include their own mail servers, and both have private and public DNS zones. The ISP provides the edge network with connectivity to the internet through wlan0. There is BGP peering between the ISP and edge routers. 
 
 __End state:__ We were able to get the ISP to send an email to gradebook.pi, although it did not get the response which might have had to do with the gradebook pi. We were able to connect our pi’s together using eth1 on the ISP and ping each other, in addition to dig each other’s servers (authoritative and mail). Some design decisions we had to make was configure the edge network’s wlan0 to work as an access point since we did not have an additional ethernet cable and adapter. The ISP provides internet to the edge network.  The edge pi was able to access mail through the ip addresses. However, we got stuck on getting the mail working properly on the edge pi: cannot access http://mail.sangria.pi or http://sangria.local.
-Summary of challenges
-Getting the rainloop container running on ISP
-Kept getting the error that it could not cd into /var/www/rainloop
-Had to delete all the other images that partially loaded that were randomly named
-Testing/knowing if it would work when connected
-Didn’t have extra USB-ethernet adapters before making the edge a WAP
-Only had 2 team members
-Battery pack running out
-Eduroam internet had dns problems
-Edited /etc/bind/named.conf.options and changed dnssec-validation to no
-DNSSEC validation is disabled, and recursive server will behave in the "old fashioned" way of performing insecure DNS lookups.
-Changing “localhost” to 127.0.0.1 
-Match-destinations didn’t work, change to match-clients
-Getting internet to edge network through ISP
-Had to advertise 0.0.0.0/0 on ISP and got it working
-Problems with edge mail
-Sangria.local and mail.sangria.pi is not accessible
-Tried rebooting, removing and adding back docker containers
-Ran named-checkzone sangria.pi /etc/bind/zones/db.sangria.pi
-Fixed error after figuring out sangria was spelled wrong
-Looked at named.conf.local and checked DNS servers  
+
+__Summary of challenges__  
+* Getting the rainloop container running on ISP
+  + Kept getting the error that it could not cd into /var/www/rainloop
+  + Had to delete all the other images that partially loaded that were randomly named
+* Testing/knowing if it would work when connected
+  + Didn’t have extra USB-ethernet adapters before making the edge a WAP
+* Only had 2 team members
+* Battery pack running out
+* Eduroam internet had dns problems
+  + Edited /etc/bind/named.conf.options and changed dnssec-validation to no
+  + DNSSEC validation is disabled, and recursive server will behave in the "old fashioned" way of performing insecure DNS lookups.
+* Changing “localhost” to 127.0.0.1 
+* Match-destinations didn’t work, change to match-clients
+* Getting internet to edge network through ISP
+  + Had to advertise 0.0.0.0/0 on ISP and got it working
+* Problems with edge mail
+  + Sangria.local and mail.sangria.pi is not accessible
+  + Tried rebooting, removing and adding back docker containers
+  + Ran named-checkzone sangria.pi /etc/bind/zones/db.sangria.pi
+  + Fixed error after figuring out sangria was spelled wrong
+  + Looked at named.conf.local and checked DNS servers 
 
 Network Diagram on turned in PDF   
 
