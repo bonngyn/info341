@@ -1,0 +1,41 @@
+frr version 4.0
+frr defaults traditional
+hostname mimosa
+no ipv6 forwarding
+username pi nopassword
+!
+service password-encryption
+service integrated-vtysh-config
+!
+log syslog informational
+!
+interface dummy0
+ ip address 172.23.44.130/32
+!
+interface dummy1
+ ip address 10.10.10.10/32
+!
+interface eth0
+ ipv6 nd ra-interval 5
+ no ipv6 nd suppress-ra
+!
+interface eth1
+ ipv6 nd ra-interval 5
+ no ipv6 nd suppress-ra
+!
+interface lo
+ ip address 172.23.44.129/32
+!
+router bgp 65100
+ bgp router-id 172.23.44.129
+ coalesce-time 1000
+ neighbor eth1 interface remote-as external
+ neighbor eth1 capability extended-nexthop
+ !
+ address-family ipv4 unicast
+  network 10.10.10.0/24
+  network 172.23.44.0/24
+ exit-address-family
+!
+line vty
+!

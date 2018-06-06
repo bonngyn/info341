@@ -1,0 +1,17 @@
+;
+; BIND data file for mimosa.pi public zone
+;
+$TTL	604800
+mimosa.pi.	IN	SOA	ns1.mimosa.pi. hostmaster.mimosa.pi. (
+		     2018060201		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+mimosa.pi.	IN	NS	ns1.mimosa.pi.
+ns1		IN	A	172.23.44.130
+
+mimosa.pi.	IN	MX	10 mail.mimosa.pi.
+mail		IN	A	172.23.44.131
+;@	IN	AAAA	::1
