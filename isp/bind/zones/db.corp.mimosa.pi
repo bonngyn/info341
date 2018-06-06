@@ -1,0 +1,18 @@
+;
+; BIND data file for corp.mimosa.pi private interface
+;
+$TTL	604800
+corp.mimosa.pi.		IN	SOA	mimosa.corp.mimosa.pi. hostmaster.mimosa.pi. (
+		     2018060201		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+corp.mimosa.pi.		IN	NS	mimosa.corp.mimosa.pi.
+mimosa			IN	A	172.23.44.1
+
+corp.mimosa.pi.		IN 	MX	10 mail.corp.mimosa.pi.
+mail			IN	A	172.23.44.66
+
+;@	IN	AAAA	::1

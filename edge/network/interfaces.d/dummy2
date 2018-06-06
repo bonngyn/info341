@@ -1,0 +1,3 @@
+auto dummy2
+iface dummy2 inet static
+  address 172.23.45.131/32

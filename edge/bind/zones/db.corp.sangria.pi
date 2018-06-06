@@ -1,0 +1,16 @@
+;
+; BIND data file for corp.sangria.pi private interface
+;
+$TTL	604800
+corp.sangria.pi.		IN	SOA	sangria.corp.sangria.pi. hostmaster.sangria.pi. (
+		     2018060201		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+corp.sangria.pi.		IN	NS	sangria.corp.sangria.pi.
+sangria			IN	A	172.23.45.1
+
+corp.sangria.pi.		IN 	MX	10 mail.corp.sangria.pi.
+mail			IN	A	172.23.45.66

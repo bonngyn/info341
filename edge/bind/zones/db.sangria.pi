@@ -1,0 +1,16 @@
+;
+; BIND data file for sangria.pi public zone
+;
+$TTL	604800
+sangria.pi.	IN	SOA	ns1.sangria.pi. hostmaster.sangria.pi. (
+		     2018060201		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+sangria.pi.	IN	NS	ns1.sangria.pi.
+ns1		IN	A	172.23.45.130
+
+sangria.pi.	IN	MX	10 mail.sangria.pi.
+mail		IN	A	172.23.45.131
