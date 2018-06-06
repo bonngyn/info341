@@ -79,7 +79,7 @@ Containers or Other sub-components
 Service/ IP associations 
 * Mail - 172.23.45.130
 
-Github repository with links to configuration for each device  
+__Github repository with links to configuration for each device__ 
 
 All files on master branch  
 
