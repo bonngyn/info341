@@ -32,7 +32,7 @@ __Summary of challenges__
   + Fixed error after figuring out sangria was spelled wrong
   + Looked at named.conf.local and checked DNS servers 
 
-__Network Diagram__
+__Network Diagram__  
 ![Network Diagram](https://github.com/bonngyn/info341/blob/master/network%20diagram.png)
 
 __Configuration Summary__  
